@@ -8,8 +8,16 @@ services:
             - SPRING_DATASOURCE_URL=jdbc:mysql://weapp-mysql:3306/weapp?useUnicode=true&characterEncoding=utf8&useSSL=false
             - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
         ports:
-            - 8080:8080
+            - 3030:3030
     weapp-mysql:
         extends:
             file: mysql.yml
             service: weapp-mysql
+        ports:
+            - 3308:3306
+    weapp-nginx:
+        image: weapp-nginx
+        links:
+            - weapp-app:weapp-app
+        ports:
+            - 3000:3000
