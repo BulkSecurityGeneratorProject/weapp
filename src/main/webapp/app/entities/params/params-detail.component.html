@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="params">
+            <h2><span jhiTranslate="weappApp.params.detail.title">Params</span> {{params.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="weappApp.params.type" [ngbTooltip]="'weappApp.params.help.type' | translate">Type</span></dt>
+                <dd>
+                    <span>{{params.type}}</span>
+                </dd>
+                <dt><span jhiTranslate="weappApp.params.json" [ngbTooltip]="'weappApp.params.help.json' | translate">Json</span></dt>
+                <dd>
+                    <span>{{params.json}}</span>
+                </dd>
+                <dt><span jhiTranslate="weappApp.params.sample">Sample</span></dt>
+                <dd>
+                    <div *ngIf="params.sample">
+                        <a [routerLink]="['/sample', params.sample?.id, 'view']">{{params.sample?.name}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/params', params.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

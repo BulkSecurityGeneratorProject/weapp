@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-params-heading" jhiTranslate="weappApp.params.home.createOrEditLabel">Create or edit a Params</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!params.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="params.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="weappApp.params.type" for="field_type" [ngbTooltip]="'weappApp.params.help.type' | translate">Type</label>
+                    <input type="text" class="form-control" name="type" id="field_type"
+                        [(ngModel)]="params.type" required/>
+                    <div [hidden]="!(editForm.controls.type?.dirty && editForm.controls.type?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.type?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="weappApp.params.json" for="field_json" [ngbTooltip]="'weappApp.params.help.json' | translate">Json</label>
+                    <textarea class="form-control" name="json" id="field_json"
+                        [(ngModel)]="params.json" required></textarea>
+                    <div [hidden]="!(editForm.controls.json?.dirty && editForm.controls.json?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.json?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="weappApp.params.sample" for="field_sample">Sample</label>
+                    <select class="form-control" id="field_sample" name="sample" [(ngModel)]="params.sample" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="sampleOption.id === params.sample?.id ? params.sample : sampleOption" *ngFor="let sampleOption of samples; trackBy: trackSampleById">{{sampleOption.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

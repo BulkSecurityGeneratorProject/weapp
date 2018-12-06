@@ -1,0 +1,10 @@
+{
+    "weappApp": {
+        "Status" : {
+            "null": "",
+            "PLAN": "PLAN",
+            "PROCESS": "PROCESS",
+            "COMPLATE": "COMPLATE"
+        }
+    }
+}

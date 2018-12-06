@@ -1,0 +1,49 @@
+{
+    "name": "Task",
+    "fields": [
+        {
+            "fieldName": "code",
+            "javadoc": "任务编号",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "name",
+            "javadoc": "项目名称",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "areaName",
+            "javadoc": "行政区域",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "project",
+            "otherEntityName": "project",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "point",
+            "otherEntityName": "point",
+            "otherEntityRelationshipName": "task"
+        }
+    ],
+    "changelogDate": "20181206013908",
+    "entityTableName": "task",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,81 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="sample">
+            <h2><span jhiTranslate="weappApp.sample.detail.title">Sample</span> {{sample.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="weappApp.sample.code" [ngbTooltip]="'weappApp.sample.help.code' | translate">Code</span></dt>
+                <dd>
+                    <span>{{sample.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="weappApp.sample.name" [ngbTooltip]="'weappApp.sample.help.name' | translate">Name</span></dt>
+                <dd>
+                    <span>{{sample.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="weappApp.sample.type" [ngbTooltip]="'weappApp.sample.help.type' | translate">Type</span></dt>
+                <dd>
+                    <span>{{sample.type}}</span>
+                </dd>
+                <dt><span jhiTranslate="weappApp.sample.status" [ngbTooltip]="'weappApp.sample.help.status' | translate">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'weappApp.Status.' + sample.status}}">{{sample.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="weappApp.sample.sampleDate" [ngbTooltip]="'weappApp.sample.help.sampleDate' | translate">Sample Date</span></dt>
+                <dd>
+                    <span>{{sample.sampleDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="weappApp.sample.dqy" [ngbTooltip]="'weappApp.sample.help.dqy' | translate">Dqy</span></dt>
+                <dd>
+                    <span>{{sample.dqy}}</span>
+                </dd>
+                <dt><span jhiTranslate="weappApp.sample.fx" [ngbTooltip]="'weappApp.sample.help.fx' | translate">Fx</span></dt>
+                <dd>
+                    <span>{{sample.fx}}</span>
+                </dd>
+                <dt><span jhiTranslate="weappApp.sample.fs" [ngbTooltip]="'weappApp.sample.help.fs' | translate">Fs</span></dt>
+                <dd>
+                    <span>{{sample.fs}}</span>
+                </dd>
+                <dt><span jhiTranslate="weappApp.sample.wd" [ngbTooltip]="'weappApp.sample.help.wd' | translate">Wd</span></dt>
+                <dd>
+                    <span>{{sample.wd}}</span>
+                </dd>
+                <dt><span jhiTranslate="weappApp.sample.xdsd" [ngbTooltip]="'weappApp.sample.help.xdsd' | translate">Xdsd</span></dt>
+                <dd>
+                    <span>{{sample.xdsd}}</span>
+                </dd>
+                <dt><span jhiTranslate="weappApp.sample.user1">User 1</span></dt>
+                <dd>
+                    <div *ngIf="sample.user1">
+                        <a [routerLink]="['/sample-user', sample.user1?.id, 'view']">{{sample.user1?.name}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="weappApp.sample.user2">User 2</span></dt>
+                <dd>
+                    <div *ngIf="sample.user2">
+                        <a [routerLink]="['/sample-user', sample.user2?.id, 'view']">{{sample.user2?.name}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="weappApp.sample.point">Point</span></dt>
+                <dd>
+                    <div *ngIf="sample.point">
+                        <a [routerLink]="['/point', sample.point?.id, 'view']">{{sample.point?.name}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sample', sample.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

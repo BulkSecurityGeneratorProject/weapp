@@ -1,0 +1,127 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-sample-heading" jhiTranslate="weappApp.sample.home.createOrEditLabel">Create or edit a Sample</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!sample.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="sample.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="weappApp.sample.code" for="field_code" [ngbTooltip]="'weappApp.sample.help.code' | translate">Code</label>
+                    <input type="text" class="form-control" name="code" id="field_code"
+                        [(ngModel)]="sample.code" required/>
+                    <div [hidden]="!(editForm.controls.code?.dirty && editForm.controls.code?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.code?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="weappApp.sample.name" for="field_name" [ngbTooltip]="'weappApp.sample.help.name' | translate">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="sample.name" required/>
+                    <div [hidden]="!(editForm.controls.name?.dirty && editForm.controls.name?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.name?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="weappApp.sample.type" for="field_type" [ngbTooltip]="'weappApp.sample.help.type' | translate">Type</label>
+                    <input type="text" class="form-control" name="type" id="field_type"
+                        [(ngModel)]="sample.type" required/>
+                    <div [hidden]="!(editForm.controls.type?.dirty && editForm.controls.type?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.type?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="weappApp.sample.status" for="field_status" [ngbTooltip]="'weappApp.sample.help.status' | translate">Status</label>
+                    <select class="form-control" name="status" [(ngModel)]="sample.status" id="field_status"  required>
+                        <option value="PLAN">{{'weappApp.Status.PLAN' | translate}}</option>
+                        <option value="PROCESS">{{'weappApp.Status.PROCESS' | translate}}</option>
+                        <option value="COMPLATE">{{'weappApp.Status.COMPLATE' | translate}}</option>
+                    </select>
+                    <div [hidden]="!(editForm.controls.status?.dirty && editForm.controls.status?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.status?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="weappApp.sample.sampleDate" for="field_sampleDate" [ngbTooltip]="'weappApp.sample.help.sampleDate' | translate">Sample Date</label>
+                    <div class="input-group">
+                        <input id="field_sampleDate" type="text" class="form-control" name="sampleDate" ngbDatepicker  #sampleDateDp="ngbDatepicker" [(ngModel)]="sample.sampleDate"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="sampleDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="weappApp.sample.dqy" for="field_dqy" [ngbTooltip]="'weappApp.sample.help.dqy' | translate">Dqy</label>
+                    <input type="number" class="form-control" name="dqy" id="field_dqy"
+                        [(ngModel)]="sample.dqy" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="weappApp.sample.fx" for="field_fx" [ngbTooltip]="'weappApp.sample.help.fx' | translate">Fx</label>
+                    <input type="text" class="form-control" name="fx" id="field_fx"
+                        [(ngModel)]="sample.fx" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="weappApp.sample.fs" for="field_fs" [ngbTooltip]="'weappApp.sample.help.fs' | translate">Fs</label>
+                    <input type="number" class="form-control" name="fs" id="field_fs"
+                        [(ngModel)]="sample.fs" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="weappApp.sample.wd" for="field_wd" [ngbTooltip]="'weappApp.sample.help.wd' | translate">Wd</label>
+                    <input type="number" class="form-control" name="wd" id="field_wd"
+                        [(ngModel)]="sample.wd" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="weappApp.sample.xdsd" for="field_xdsd" [ngbTooltip]="'weappApp.sample.help.xdsd' | translate">Xdsd</label>
+                    <input type="number" class="form-control" name="xdsd" id="field_xdsd"
+                        [(ngModel)]="sample.xdsd" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="weappApp.sample.user1" for="field_user1">User 1</label>
+                    <select class="form-control" id="field_user1" name="user1" [(ngModel)]="sample.user1" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="sampleUserOption.id === sample.user1?.id ? sample.user1 : sampleUserOption" *ngFor="let sampleUserOption of sampleusers; trackBy: trackSampleUserById">{{sampleUserOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="weappApp.sample.user2" for="field_user2">User 2</label>
+                    <select class="form-control" id="field_user2" name="user2" [(ngModel)]="sample.user2" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="sampleUserOption.id === sample.user2?.id ? sample.user2 : sampleUserOption" *ngFor="let sampleUserOption of sampleusers; trackBy: trackSampleUserById">{{sampleUserOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="weappApp.sample.point" for="field_point">Point</label>
+                    <select class="form-control" id="field_point" name="point" [(ngModel)]="sample.point" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="pointOption.id === sample.point?.id ? sample.point : pointOption" *ngFor="let pointOption of points; trackBy: trackPointById">{{pointOption.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

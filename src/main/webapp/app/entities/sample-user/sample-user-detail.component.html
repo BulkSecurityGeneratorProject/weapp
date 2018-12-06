@@ -1,0 +1,27 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="sampleUser">
+            <h2><span jhiTranslate="weappApp.sampleUser.detail.title">Sample User</span> {{sampleUser.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="weappApp.sampleUser.name" [ngbTooltip]="'weappApp.sampleUser.help.name' | translate">Name</span></dt>
+                <dd>
+                    <span>{{sampleUser.name}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sample-user', sampleUser.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

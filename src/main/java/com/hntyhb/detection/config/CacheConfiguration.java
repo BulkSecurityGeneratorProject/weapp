@@ -38,6 +38,18 @@ public class CacheConfiguration {
             cm.createCache(com.hntyhb.detection.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.hntyhb.detection.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.hntyhb.detection.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.hntyhb.detection.domain.Project.class.getName(), jcacheConfiguration);
+            cm.createCache(com.hntyhb.detection.domain.Project.class.getName() + ".names", jcacheConfiguration);
+            cm.createCache(com.hntyhb.detection.domain.Task.class.getName(), jcacheConfiguration);
+            cm.createCache(com.hntyhb.detection.domain.Task.class.getName() + ".points", jcacheConfiguration);
+            cm.createCache(com.hntyhb.detection.domain.Point.class.getName(), jcacheConfiguration);
+            cm.createCache(com.hntyhb.detection.domain.Point.class.getName() + ".samples", jcacheConfiguration);
+            cm.createCache(com.hntyhb.detection.domain.SampleUser.class.getName(), jcacheConfiguration);
+            cm.createCache(com.hntyhb.detection.domain.SampleUser.class.getName() + ".sample1S", jcacheConfiguration);
+            cm.createCache(com.hntyhb.detection.domain.SampleUser.class.getName() + ".sample2S", jcacheConfiguration);
+            cm.createCache(com.hntyhb.detection.domain.Sample.class.getName(), jcacheConfiguration);
+            cm.createCache(com.hntyhb.detection.domain.Sample.class.getName() + ".params", jcacheConfiguration);
+            cm.createCache(com.hntyhb.detection.domain.Params.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

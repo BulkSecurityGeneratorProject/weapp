@@ -1,0 +1,103 @@
+{
+    "name": "Sample",
+    "fields": [
+        {
+            "fieldName": "code",
+            "javadoc": "采样编号",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "name",
+            "javadoc": "样品名称",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "type",
+            "javadoc": "监测项目",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "status",
+            "javadoc": "状态",
+            "fieldType": "Status",
+            "fieldValues": "PLAN,PROCESS,COMPLATE",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sampleDate",
+            "javadoc": "采样时间",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dqy",
+            "javadoc": "大气压",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "fx",
+            "javadoc": "风向",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fs",
+            "javadoc": "风速",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "wd",
+            "javadoc": "温度",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "xdsd",
+            "javadoc": "相对湿度",
+            "fieldType": "Float"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "user1",
+            "otherEntityName": "sampleUser",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "user2",
+            "otherEntityName": "sampleUser",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "point",
+            "otherEntityName": "point",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "param",
+            "otherEntityName": "params",
+            "otherEntityRelationshipName": "sample"
+        }
+    ],
+    "changelogDate": "20181206013911",
+    "entityTableName": "sample",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

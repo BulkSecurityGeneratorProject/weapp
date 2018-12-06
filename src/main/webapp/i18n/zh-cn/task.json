@@ -1,0 +1,31 @@
+
+{
+    "weappApp": {
+        "task" : {
+            "home": {
+                "title": "Tasks",
+                "createLabel": "创建新 Task",
+                "createOrEditLabel": "创建或编辑 Task"
+            },
+            "created": "Task {{ param }} 创建成功",
+            "updated": "Task {{ param }} 更新成功",
+            "deleted": "Task {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Task {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Task"
+            },
+            "code": "Code",
+            "name": "Name",
+            "areaName": "Area Name",
+            "project": "Project",
+            "point": "Point",
+            "help": {
+                "code": "任务编号",
+                "name": "项目名称",
+                "areaName": "行政区域"
+            }
+        }
+    }
+}

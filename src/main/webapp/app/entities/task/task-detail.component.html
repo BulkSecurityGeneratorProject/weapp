@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="task">
+            <h2><span jhiTranslate="weappApp.task.detail.title">Task</span> {{task.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="weappApp.task.code" [ngbTooltip]="'weappApp.task.help.code' | translate">Code</span></dt>
+                <dd>
+                    <span>{{task.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="weappApp.task.name" [ngbTooltip]="'weappApp.task.help.name' | translate">Name</span></dt>
+                <dd>
+                    <span>{{task.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="weappApp.task.areaName" [ngbTooltip]="'weappApp.task.help.areaName' | translate">Area Name</span></dt>
+                <dd>
+                    <span>{{task.areaName}}</span>
+                </dd>
+                <dt><span jhiTranslate="weappApp.task.project">Project</span></dt>
+                <dd>
+                    <div *ngIf="task.project">
+                        <a [routerLink]="['/project', task.project?.id, 'view']">{{task.project?.name}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/task', task.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

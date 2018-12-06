@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-point-heading" jhiTranslate="weappApp.point.home.createOrEditLabel">Create or edit a Point</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!point.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="point.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="weappApp.point.code" for="field_code" [ngbTooltip]="'weappApp.point.help.code' | translate">Code</label>
+                    <input type="text" class="form-control" name="code" id="field_code"
+                        [(ngModel)]="point.code" required/>
+                    <div [hidden]="!(editForm.controls.code?.dirty && editForm.controls.code?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.code?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="weappApp.point.name" for="field_name" [ngbTooltip]="'weappApp.point.help.name' | translate">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="point.name" required/>
+                    <div [hidden]="!(editForm.controls.name?.dirty && editForm.controls.name?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.name?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="weappApp.point.lng" for="field_lng" [ngbTooltip]="'weappApp.point.help.lng' | translate">Lng</label>
+                    <input type="number" class="form-control" name="lng" id="field_lng"
+                        [(ngModel)]="point.lng" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="weappApp.point.lat" for="field_lat" [ngbTooltip]="'weappApp.point.help.lat' | translate">Lat</label>
+                    <input type="number" class="form-control" name="lat" id="field_lat"
+                        [(ngModel)]="point.lat" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="weappApp.point.address" for="field_address" [ngbTooltip]="'weappApp.point.help.address' | translate">Address</label>
+                    <input type="text" class="form-control" name="address" id="field_address"
+                        [(ngModel)]="point.address" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="weappApp.point.task" for="field_task">Task</label>
+                    <select class="form-control" id="field_task" name="task" [(ngModel)]="point.task" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="taskOption.id === point.task?.id ? point.task : taskOption" *ngFor="let taskOption of tasks; trackBy: trackTaskById">{{taskOption.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

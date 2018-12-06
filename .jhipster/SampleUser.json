@@ -1,0 +1,33 @@
+{
+    "name": "SampleUser",
+    "fields": [
+        {
+            "fieldName": "name",
+            "javadoc": "姓名",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "sample1",
+            "otherEntityName": "sample",
+            "otherEntityRelationshipName": "user1"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "sample2",
+            "otherEntityName": "sample",
+            "otherEntityRelationshipName": "user2"
+        }
+    ],
+    "changelogDate": "20181206013910",
+    "entityTableName": "sample_user",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

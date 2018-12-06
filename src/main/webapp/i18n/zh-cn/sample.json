@@ -1,0 +1,47 @@
+
+{
+    "weappApp": {
+        "sample" : {
+            "home": {
+                "title": "Samples",
+                "createLabel": "创建新 Sample",
+                "createOrEditLabel": "创建或编辑 Sample"
+            },
+            "created": "Sample {{ param }} 创建成功",
+            "updated": "Sample {{ param }} 更新成功",
+            "deleted": "Sample {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Sample {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Sample"
+            },
+            "code": "Code",
+            "name": "Name",
+            "type": "Type",
+            "status": "Status",
+            "sampleDate": "Sample Date",
+            "dqy": "Dqy",
+            "fx": "Fx",
+            "fs": "Fs",
+            "wd": "Wd",
+            "xdsd": "Xdsd",
+            "user1": "User 1",
+            "user2": "User 2",
+            "point": "Point",
+            "param": "Param",
+            "help": {
+                "code": "采样编号",
+                "name": "样品名称",
+                "type": "监测项目",
+                "status": "状态",
+                "sampleDate": "采样时间",
+                "dqy": "大气压",
+                "fx": "风向",
+                "fs": "风速",
+                "wd": "温度",
+                "xdsd": "相对湿度"
+            }
+        }
+    }
+}

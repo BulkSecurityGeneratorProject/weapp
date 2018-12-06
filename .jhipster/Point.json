@@ -1,0 +1,59 @@
+{
+    "name": "Point",
+    "fields": [
+        {
+            "fieldName": "code",
+            "javadoc": "测点编号",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "name",
+            "javadoc": "测点名称",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "lng",
+            "javadoc": "进度",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "lat",
+            "javadoc": "纬度",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "address",
+            "javadoc": "地址",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "task",
+            "otherEntityName": "task",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "sample",
+            "otherEntityName": "sample",
+            "otherEntityRelationshipName": "point"
+        }
+    ],
+    "changelogDate": "20181206013909",
+    "entityTableName": "point",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

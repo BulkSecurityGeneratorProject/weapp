@@ -1,0 +1,27 @@
+
+{
+    "weappApp": {
+        "sampleUser" : {
+            "home": {
+                "title": "Sample Users",
+                "createLabel": "创建新 Sample User",
+                "createOrEditLabel": "创建或编辑 Sample User"
+            },
+            "created": "Sample User {{ param }} 创建成功",
+            "updated": "Sample User {{ param }} 更新成功",
+            "deleted": "Sample User {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Sample User {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Sample User"
+            },
+            "name": "Name",
+            "sample1": "Sample 1",
+            "sample2": "Sample 2",
+            "help": {
+                "name": "姓名"
+            }
+        }
+    }
+}

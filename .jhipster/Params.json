@@ -1,0 +1,39 @@
+{
+    "name": "Params",
+    "fields": [
+        {
+            "fieldName": "type",
+            "javadoc": "测量类型",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "json",
+            "javadoc": "测量参数",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "sample",
+            "otherEntityName": "sample",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20181206013912",
+    "entityTableName": "params",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

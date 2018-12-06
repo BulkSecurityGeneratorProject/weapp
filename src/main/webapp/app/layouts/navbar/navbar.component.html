@@ -29,6 +29,42 @@
                     </span>
                 </a>
                 <ul class="dropdown-menu" ngbDropdownMenu>
+                    <li>
+                        <a class="dropdown-item" routerLink="project" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon [icon]="'asterisk'" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.project">Project</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="task" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon [icon]="'asterisk'" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.task">Task</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="point" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon [icon]="'asterisk'" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.point">Point</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="sample-user" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon [icon]="'asterisk'" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.sampleUser">Sample User</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="sample" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon [icon]="'asterisk'" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.sample">Sample</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="params" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon [icon]="'asterisk'" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.params">Params</span>
+                        </a>
+                    </li>
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </ul>
             </li>
